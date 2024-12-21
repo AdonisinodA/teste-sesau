@@ -10,7 +10,7 @@ import { FiltroTabela } from "./components/FiltroTabela";
 export function ListaEstabelecimento() {
   const { ModalError, handleError } = useModalError();
   const [estabelecimentos, setEstabelecimentos] = useState<Estabelecimento[]>([]);
-  const [loading, setLoading] = useState<'list' | ''>('');
+  const [loading, setLoading] = useState<'list' | ''>('list');
   const [filters, setFilters] = useState({
     codigoCnes: "",
     nomeFantasia: "",
