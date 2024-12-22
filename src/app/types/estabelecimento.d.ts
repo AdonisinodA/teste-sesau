@@ -37,3 +37,20 @@ export interface Estabelecimento {
     tipo_gestao: string;
   }
   
+
+  export interface IFormularioEstabelecimento{
+    codigo_cnes:string
+    nome_razao_social:string
+    nome_fantasia:string
+    numero_cnpj:string
+    numero_telefone_estabelecimento:string
+    endereco_email_estabelecimento:string
+    codigo_estabelecimento_saude:string
+    descricao_turno_atendimento:string
+    
+
+    codigo_cep_estabelecimento:string
+    codigo_uf:string
+    bairro_estabelecimento:string
+    numero_estabelecimento:string
+  }
