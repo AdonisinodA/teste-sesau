@@ -11,7 +11,7 @@ interface TableProps {
 export default function Tabela({ columns, data, onClickRow }: TableProps) {
   return (
     <div className="overflow-hidden">
-      <table className="min-w-full table-auto">
+      <table className="w-[80vw] table-auto ">
         <thead className="bg-gray-100">
           <tr>
             {columns[1].map((column, index) => (
