@@ -53,11 +53,10 @@ export function Mapa({
   }
 
   return (
-  <div className='h-96 '>
     <MapContainer
       center={[latitude, longitude]}
       zoom={16}
-      style={{ height: '60vh', width: '100%', zIndex: 10 }}
+      style={{ height: '24rem', width: '100%', zIndex: 10 }}
     >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -81,7 +80,6 @@ export function Mapa({
         </>
       )}
     </MapContainer>
-  </div>
   )
 
 }

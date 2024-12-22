@@ -5,7 +5,7 @@ interface Props{
 }
 
 export function Container({children}:Props){
-    return <div className="flex flex-col text-black">
+    return <div className="flex flex-col items-center text-black">
         {children}
     </div>
 }
