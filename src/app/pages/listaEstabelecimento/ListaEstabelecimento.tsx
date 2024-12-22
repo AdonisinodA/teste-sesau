@@ -6,8 +6,10 @@ import { Estabelecimento } from "../../types/estabelecimento";
 import { Container } from "../../components/Container";
 import Tabela from "../../components/Tabela";
 import { FiltroTabela } from "./components/FiltroTabela";
+import { useNavigate } from "react-router-dom";
 
 export function ListaEstabelecimento() {
+  const navigate = useNavigate();
   const { ModalError, handleError } = useModalError();
   const [estabelecimentos, setEstabelecimentos] = useState<Estabelecimento[]>([]);
   const [loading, setLoading] = useState<'list' | ''>('list');
@@ -17,11 +19,10 @@ export function ListaEstabelecimento() {
     cnpj: "",
   });
 
-  // Função para buscar os estabelecimentos com base nos filtros
   async function pegarLista() {
     try {
       setLoading('list');
-      const result = await estabelecimentoApi.listarEstabelecimentos(); // Considerar enviar os filtros no backend, se possível.
+      const result = await estabelecimentoApi.listarEstabelecimentos(); 
       setEstabelecimentos(result.estabelecimentos);
     } catch (error) {
       handleError(error);
@@ -48,6 +49,11 @@ export function ListaEstabelecimento() {
     }));
   };
 
+
+  const handleRedirect = (cnes_codigo:number) => {
+    navigate(`/cnes/estabelecimento/${cnes_codigo}`);
+  };
+
   return (
     <Container>
       {loading === 'list' ? (
@@ -68,7 +74,7 @@ export function ListaEstabelecimento() {
                     item.numero_cnpj && item.numero_cnpj.toString().includes(filters.cnpj)
                 );
             })}
-            onClickRow={(row) => console.log(row)}
+            onClickRow={(row) => handleRedirect(row.codigo_cnes)}
           />
         </>
       )}

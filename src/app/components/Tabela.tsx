@@ -8,7 +8,7 @@ interface TableProps {
   onClickRow:(row:Estabelecimento)=> void
 }
 
-export default function Tabela({ columns, data }: TableProps) {
+export default function Tabela({ columns, data, onClickRow }: TableProps) {
   return (
     <div className="overflow-hidden">
       <table className="min-w-full table-auto">
@@ -23,9 +23,11 @@ export default function Tabela({ columns, data }: TableProps) {
         </thead>
         <tbody>
           {data.map((row, index) => (
-            <tr key={index} className={`border-t ${index % 2 === 0 ? "bg-white" : "bg-gray-200"} hover:scale-[101%] hover:cursor-pointer hover:bg-blue-200`}>
+            <tr key={index}  className={`border-t ${index % 2 === 0 ? "bg-white" : "bg-gray-200"} hover:scale-[101%] hover:cursor-pointer hover:bg-blue-200`}>
               {columns[0].map((column, idx) => (
-                <td key={idx} className="px-4 py-2 text-gray-600">
+                <td key={idx} onClick={()=>{
+                  onClickRow(row as Estabelecimento)
+                }} className="px-4 py-2 text-gray-600">
                   {row[column] || "-"}
                 </td>
               ))}

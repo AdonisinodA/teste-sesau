@@ -20,7 +20,7 @@ class EstabelecimentoApi{
 
 
 
-    async buscarEstabelecimento(codigo_cnes:number) {
+    async buscarEstabelecimento(codigo_cnes:string) {
       try {
         const response = await api.get(`/cnes/estabelecimentos/${codigo_cnes}`);
         return response.data; 
