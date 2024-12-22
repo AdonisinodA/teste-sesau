@@ -54,14 +54,14 @@ export function FormularioEstabelecimento(){
             <FormProvider {...methods}>
                 <Titulo>Formulário Estabelecimento</Titulo>
                <section className="space-y-10 p-4">
-               <Input  label="Código CNES"  type="number" name='codigo_cnes'/>
-                <Input  label="Nome razão social" name='nome_razao_social'/>
-                <Input  label="Nome fantasia" name='nome_fantasia'/>
-                <Input  label="Número CNPJ" name="numero_cnpj"/>
-                <Input  label="Número de telefone" name="numero_telefone_estabelecimento"/>
-                <Input  label="E-mail" name="endereco_email_estabelecimento"/>
-                <Input  label="Código do estabelecimento"  name="codigo_estabelecimento_saude"/>
-                <Input  label="Descrição de turno"  name="descricao_turno_atendimento"/>
+               <Input placeholder="Digite o Código CNES:"  label="Código CNES"  type="number" name='codigo_cnes'/>
+                <Input placeholder="Digite o nome da razão social:" label="Nome razão social" name='nome_razao_social'/>
+                <Input  placeholder="Digite o nome fantasia:" label="Nome fantasia" name='nome_fantasia'/>
+                <Input placeholder="Digite o número CNPJ:" label="Número CNPJ" name="numero_cnpj"/>
+                <Input placeholder="Digite o número de telefone:" label="Número de telefone" name="numero_telefone_estabelecimento"/>
+                <Input placeholder="Digite o E-mail:" label="E-mail" name="endereco_email_estabelecimento"/>
+                <Input placeholder="Digite o Código do estabelecimento:" label="Código do estabelecimento"  name="codigo_estabelecimento_saude"/>
+                <Input placeholder="Digite a descrição de turno:" label="Descrição de turno"  name="descricao_turno_atendimento"/>
                 <SessaoEndereco/>
                 <div className="flex justify-end">
                     <button disabled={loading} type="button" onClick={submit} className="bg-primary text-white p-2 rounded-md hover:scale-[101%] hover:bg-primary/80">Enviar</button>
