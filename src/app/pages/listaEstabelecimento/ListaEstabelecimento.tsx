@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import LoadingSpinner from "../../components/Loading";
+import LoadingSpinner from "../../components/loading/Loading";
 import { useModalError } from "../../hook/UseModalError";
 import estabelecimentoApi from "../../service/estabelecimento/Estabelecimento";
 import { Estabelecimento } from "../../types/estabelecimento";
-import { Container } from "../../components/Container";
+import { Container } from "../../components/containers/Container";
 import Tabela from "../../components/Tabela";
 import { FiltroTabela } from "./components/FiltroTabela";
 import { useNavigate } from "react-router-dom";
+import { FaPlus } from "react-icons/fa";
 
 export function ListaEstabelecimento() {
   const navigate = useNavigate();
@@ -60,7 +61,12 @@ export function ListaEstabelecimento() {
         <LoadingSpinner />
       ) : (
         <>
-          <FiltroTabela filters={filters} onFilterChange={handleFilterChange} />
+        <section className="flex justify-between w-full">
+        <FiltroTabela filters={filters} onFilterChange={handleFilterChange} />
+        <button onClick={()=>{
+          navigate('/cnes/formulario/estabelecimento')
+        }} className="bg-white h-12 hover:scale-[101%] hover:bg-slate-200"><div className="flex items-center space-x-2 px-2"><span>Adicionar Estabelecimento </span><FaPlus/></div></button>
+        </section>
           <Tabela
             columns={columns}
             data={estabelecimentos.filter(item => {
