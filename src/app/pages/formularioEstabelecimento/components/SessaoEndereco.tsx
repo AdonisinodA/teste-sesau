@@ -26,14 +26,14 @@ export function SessaoEndereco(){
     return <>
         <SubTitulo>Endereço</SubTitulo>
         <section className="flex items-center relative space-x-1">
-        <Input  label="CEP"  name="codigo_cep_estabelecimento"/> 
+        <Input placeholder="00000000" label="CEP"  name="codigo_cep_estabelecimento"/> 
         <button onClick={buscarCep} className=" relative top-[0.70rem] bg-primary w-28 text-white p-2 hover:scale-[101%] hover:bg-primary/80">
         buscar CEP
         </button>
 
         </section>
-        <Input  label="UF"  name="codigo_uf" onBlur={buscarCep}/>
-        <Input  label="Bairro"  name="bairro_estabelecimento"/>
+        <Input placeholder="SP" label="UF"  name="codigo_uf" onBlur={buscarCep}/>
+        <Input placeholder="Bairro" label="Bairro"  name="bairro_estabelecimento"/>
 
         <section className="flex">
             <CheckBox onChange={(checked)=>{
@@ -42,7 +42,7 @@ export function SessaoEndereco(){
         label="Sem Número"
         />
         </section>
-        <Input disabled={semNumero} placeholder={`${semNumero ? "S/N":  ''}`}  label="Número"  name="numero_estabelecimento"/>
+        <Input  disabled={semNumero} placeholder={`${semNumero ? "S/N":  'Digite o número do endereço'}`}  label="Número"  name="numero_estabelecimento"/>
 
         <ModalError/>
     </>
