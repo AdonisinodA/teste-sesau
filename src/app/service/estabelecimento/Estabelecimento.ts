@@ -1,4 +1,4 @@
-import { Estabelecimento } from "../../types/estabelecimento";
+import { Estabelecimento, IFormularioEstabelecimento } from "../../types/estabelecimento";
 import api from "../api";
 
 export interface responseListarEstabelecimento{
@@ -26,6 +26,16 @@ class EstabelecimentoApi{
         return response.data; 
       } catch (error) {
         console.error("Erro ao buscar estabelecimento:", error);
+        throw error; 
+      }
+    }
+
+    async criarEstabelecimento(dadosForm:IFormularioEstabelecimento) {
+      try {
+        const response = await api.post<responseListarEstabelecimento>("cnes/estabelecimentos",dadosForm);
+        return response.data; 
+      } catch (error) {
+        console.error("Erro ao criar os estabelecimento:", error);
         throw error; 
       }
     }
