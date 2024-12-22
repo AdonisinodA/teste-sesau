@@ -63,6 +63,8 @@ export function MostraEstabelecimento(){
                 <SubTitulo>Endereço</SubTitulo>
             <Infor label={'CEP:'} value={estabelecimento!.codigo_cep_estabelecimento}/>
             <Infor label={'Bairro:'} value={estabelecimento!.bairro_estabelecimento}/>
+            <Infor label={'Latitude:'} value={estabelecimento!.latitude_estabelecimento_decimo_grau}/>
+            <Infor label={'Longitude:'} value={estabelecimento!.longitude_estabelecimento_decimo_grau}/>
             <section className="w-full py-4">
             <Mapa latitude={estabelecimento!.latitude_estabelecimento_decimo_grau!} longitude={estabelecimento!.longitude_estabelecimento_decimo_grau!}/>
             </section>
