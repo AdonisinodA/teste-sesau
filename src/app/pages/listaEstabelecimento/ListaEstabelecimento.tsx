@@ -61,11 +61,11 @@ export function ListaEstabelecimento() {
         <LoadingSpinner />
       ) : (
         <>
-        <section className="flex justify-between w-full">
+        <section className="flex justify-center space-x-20">
         <FiltroTabela filters={filters} onFilterChange={handleFilterChange} />
         <button onClick={()=>{
           navigate('/cnes/formulario/estabelecimento')
-        }} className="bg-white h-12 hover:scale-[101%] hover:bg-slate-200"><div className="flex items-center space-x-2 px-2"><span>Adicionar Estabelecimento </span><FaPlus/></div></button>
+        }} className="bg-white h-11 hover:scale-[101%] hover:bg-slate-200"><div className="flex items-center space-x-2 px-2"><span>Adicionar Estabelecimento </span><FaPlus/></div></button>
         </section>
           <Tabela
             columns={columns}
